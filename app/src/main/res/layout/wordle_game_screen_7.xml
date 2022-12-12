@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/row_1"
+        style="@style/rows">
+
+        <TextView
+            android:id="@+id/row_1_box_1"
+            style="@style/letters_7" />
+
+        <TextView
+            android:id="@+id/row_1_box_2"
+            style="@style/letters_7"/>
+
+        <TextView
+            android:id="@+id/row_1_box_3"
+            style="@style/letters_7"/>
+
+        <TextView
+            android:id="@+id/row_1_box_4"
+            style="@style/letters_7"/>
+
+        <TextView
+            android:id="@+id/row_1_box_5"
+            style="@style/letters_7"/>
+
+        <TextView
+            android:id="@+id/row_1_box_6"
+            style="@style/letters_7"/>
+
+        <TextView
+            android:id="@+id/row_1_box_7"
+            style="@style/letters_7"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/row_2"
+        style="@style/rows">
+
+        <TextView
+            android:id="@+id/row_2_box_1"
+            style="@style/letters_7"/>
+
+        <TextView
+            android:id="@+id/row_2_box_2"
+            style="@style/letters_7"/>
+
+        <TextView
+            android:id="@+id/row_2_box_3"
+            style="@style/letters_7"/>
+
+        <TextView
+            android:id="@+id/row_2_box_4"
+            style="@style/letters_7"/>
+
+        <TextView
+            android:id="@+id/row_2_box_5"
+            style="@style/letters_7"/>
+
+        <TextView
+            android:id="@+id/row_2_box_6"
+            style="@style/letters_7"/>
+
+        <TextView
+            android:id="@+id/row_2_box_7"
+            style="@style/letters_7"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/row_3"
+        style="@style/rows">
+
+        <TextView
+            android:id="@+id/row_3_box_1"
+            style="@style/letters_7"/>
+
+        <TextView
+            android:id="@+id/row_3_box_2"
+            style="@style/letters_7"/>
+
+        <TextView
+            android:id="@+id/row_3_box_3"
+            style="@style/letters_7"/>
+
+        <TextView
+            android:id="@+id/row_3_box_4"
+            style="@style/letters_7"/>
+
+        <TextView
+            android:id="@+id/row_3_box_5"
+            style="@style/letters_7"/>
+
+        <TextView
+            android:id="@+id/row_3_box_6"
+            style="@style/letters_7"/>
+
+        <TextView
+            android:id="@+id/row_3_box_7"
+            style="@style/letters_7"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/row_4"
+        style="@style/rows">
+
+        <TextView
+            android:id="@+id/row_4_box_1"
+            style="@style/letters_7"/>
+
+        <TextView
+            android:id="@+id/row_4_box_2"
+            style="@style/letters_7"/>
+
+        <TextView
+            android:id="@+id/row_4_box_3"
+            style="@style/letters_7"/>
+
+        <TextView
+            android:id="@+id/row_4_box_4"
+            style="@style/letters_7"/>
+
+        <TextView
+            android:id="@+id/row_4_box_5"
+            style="@style/letters_7"/>
+
+        <TextView
+            android:id="@+id/row_4_box_6"
+            style="@style/letters_7"/>
+
+        <TextView
+            android:id="@+id/row_4_box_7"
+            style="@style/letters_7"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/row_5"
+        style="@style/rows">
+
+        <TextView
+            android:id="@+id/row_5_box_1"
+            style="@style/letters_7"/>
+
+        <TextView
+            android:id="@+id/row_5_box_2"
+            style="@style/letters_7"/>
+
+        <TextView
+            android:id="@+id/row_5_box_3"
+            style="@style/letters_7"/>
+
+        <TextView
+            android:id="@+id/row_5_box_4"
+            style="@style/letters_7"/>
+
+        <TextView
+            android:id="@+id/row_5_box_5"
+            style="@style/letters_7"/>
+
+        <TextView
+            android:id="@+id/row_5_box_6"
+            style="@style/letters_7"/>
+
+        <TextView
+            android:id="@+id/row_5_box_7"
+            style="@style/letters_7"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/row_6"
+        style="@style/rows">
+
+        <TextView
+            android:id="@+id/row_6_box_1"
+            style="@style/letters_7"/>
+
+        <TextView
+            android:id="@+id/row_6_box_2"
+            style="@style/letters_7"/>
+
+        <TextView
+            android:id="@+id/row_6_box_3"
+            style="@style/letters_7"/>
+
+        <TextView
+            android:id="@+id/row_6_box_4"
+            style="@style/letters_7"/>
+
+        <TextView
+            android:id="@+id/row_6_box_5"
+            style="@style/letters_7"/>
+
+        <TextView
+            android:id="@+id/row_6_box_6"
+            style="@style/letters_7"/>
+
+        <TextView
+            android:id="@+id/row_6_box_7"
+            style="@style/letters_7"/>
+    </LinearLayout>
+
+    <!--
+    <include layout="@layout/keyboard"/>
+    -->
+
+    <LinearLayout
+        android:id="@+id/keyboard_row_1"
+        android:layout_marginTop="5dp"
+        android:gravity="center"
+        style="@style/keyboard">
+
+        <Button
+            android:id="@+id/Q"
+            style="@style/button"
+            android:text="Q" />
+
+        <Button
+            android:id="@+id/W"
+            style="@style/button"
+            android:text="W" />
+
+        <Button
+            android:id="@+id/E"
+            style="@style/button"
+            android:text="E" />
+
+        <Button
+            android:id="@+id/R"
+            style="@style/button"
+            android:text="R" />
+
+        <Button
+            android:id="@+id/T"
+            style="@style/button"
+
+            android:text="T" />
+
+        <Button
+            android:id="@+id/Y"
+            style="@style/button"
+            android:text="Y" />
+
+        <Button
+            android:id="@+id/U"
+            style="@style/button"
+            android:text="U" />
+
+        <Button
+            android:id="@+id/I"
+            style="@style/button"
+            android:text="I" />
+
+        <Button
+            android:id="@+id/O"
+            style="@style/button"
+            android:text="O" />
+
+        <Button
+            android:id="@+id/P"
+            style="@style/button"
+            android:text="P" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/keyboard_row_2"
+        android:gravity="center"
+        style="@style/keyboard">
+
+        <Button
+            android:id="@+id/A"
+            style="@style/button"
+            android:text="A" />
+
+        <Button
+            android:id="@+id/S"
+            style="@style/button"
+            android:text="S" />
+
+        <Button
+            android:id="@+id/D"
+            style="@style/button"
+            android:text="D" />
+
+        <Button
+            android:id="@+id/F"
+            style="@style/button"
+            android:text="F" />
+
+        <Button
+            android:id="@+id/G"
+            style="@style/button"
+            android:text="G" />
+
+        <Button
+            android:id="@+id/H"
+            style="@style/button"
+            android:text="H" />
+
+        <Button
+            android:id="@+id/J"
+            style="@style/button"
+            android:text="J" />
+
+        <Button
+            android:id="@+id/K"
+            style="@style/button"
+            android:text="K" />
+
+        <Button
+            android:id="@+id/L"
+            style="@style/button"
+            android:text="L" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/keyboard_row_3"
+        style="@style/keyboard"
+        android:gravity="center">
+
+        <Button
+            android:id="@+id/Enter"
+            style="@style/button"
+            android:layout_width="90dp"
+            android:text="Enter" />
+
+        <Button
+            android:id="@+id/Z"
+            style="@style/button"
+            android:text="Z" />
+
+        <Button
+            android:id="@+id/X"
+            style="@style/button"
+            android:text="X" />
+
+        <Button
+            android:id="@+id/C"
+            style="@style/button"
+            android:text="C" />
+
+        <Button
+            android:id="@+id/V"
+            style="@style/button"
+            android:text="V" />
+
+        <Button
+            android:id="@+id/B"
+            style="@style/button"
+            android:text="B" />
+
+        <Button
+            android:id="@+id/N"
+            style="@style/button"
+            android:text="N" />
+
+        <Button
+            android:id="@+id/M"
+            style="@style/button"
+            android:text="M" />
+
+        <ImageButton
+            android:id="@+id/backspaceButton"
+            style="@style/button"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:cropToPadding="true"
+            android:padding="10dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_baseline_backspace_24" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
