@@ -1,8 +1,10 @@
-package com.bignerdranch.android.cs4750finaproject
+package com.bignerdranch.android.wordle_randa
 import kotlinx.coroutines.flow.MutableSharedFlow
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import androidx.lifecycle.viewModelScope
+import com.bignerdranch.android.cs4750finaproject.Signal
+import com.bignerdranch.android.wordle_randa.R
 import kotlinx.coroutines.launch
 import java.util.*
 
@@ -11,7 +13,7 @@ const val EMPTY_STRING = ""
 const val NUMBER_OF_ROWS = 6
 const val ALPHA = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 const val ALPHA_LEN = 26
-val DEFAULT_KEY = Key (backgrdColor=R.color.gray, textColor=R.color.black)
+val DEFAULT_KEY = Key (backgrdColor= R.color.gray, textColor=R.color.black)
 val DEFAULT_LETTER = Letter("", R.drawable.border, R.color.black)
 
 

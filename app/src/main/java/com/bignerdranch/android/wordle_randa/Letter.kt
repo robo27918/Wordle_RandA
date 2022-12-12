@@ -1,6 +1,6 @@
-package com.bignerdranch.android.cs4750finaproject
+package com.bignerdranch.android.wordle_randa
 
 data class Letter (val letter:String,
                    val backgrdColor: Int = R.drawable.border,
-                    val textColor: Int = R.color.black
+                   val textColor: Int = R.color.black
                     )

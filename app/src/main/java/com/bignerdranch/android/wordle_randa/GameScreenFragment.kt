@@ -1,4 +1,4 @@
-package com.bignerdranch.android.cs4750finaproject
+package com.bignerdranch.android.wordle_randa
 
 import android.app.AlertDialog
 import android.os.Bundle
@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.bignerdranch.android.wordle_randa.databinding.FragmentGameScreenBinding
+import com.bignerdranch.android.wordle_randa.shakeAnimation
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

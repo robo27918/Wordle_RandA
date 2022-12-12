@@ -1,4 +1,4 @@
-package com.bignerdranch.android.cs4750finaproject
+package com.bignerdranch.android.wordle_randa
 
 /***
  * class to provide basic methods to be able to move left or right in the row

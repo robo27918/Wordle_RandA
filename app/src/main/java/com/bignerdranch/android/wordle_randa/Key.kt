@@ -1,4 +1,4 @@
-package com.bignerdranch.android.cs4750finaproject
+package com.bignerdranch.android.wordle_randa
 
 /***
  * Used to make the default setting of the keyboard tiles

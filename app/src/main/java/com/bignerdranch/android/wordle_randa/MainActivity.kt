@@ -1,10 +1,10 @@
-package com.bignerdranch.android.cs4750finaproject
+package com.bignerdranch.android.wordle_randa
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.bignerdranch.android.cs4750finaproject.databinding.ActivityMainBinding
+import com.bignerdranch.android.wordle_randa.databinding.ActivityMainBinding
 
-private lateinit var binding:ActivityMainBinding
+private lateinit var binding: ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

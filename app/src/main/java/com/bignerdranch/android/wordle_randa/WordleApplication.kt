@@ -1,4 +1,4 @@
-package com.bignerdranch.android.cs4750finaproject
+package com.bignerdranch.android.wordle_randa
 
 class WordleApplication {
 }

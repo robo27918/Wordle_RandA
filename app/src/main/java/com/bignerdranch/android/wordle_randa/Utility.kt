@@ -1,4 +1,4 @@
-package com.bignerdranch.android.cs4750finaproject
+package com.bignerdranch.android.wordle_randa
 
 /***
  * recursive function to turn list of characters into a string type
