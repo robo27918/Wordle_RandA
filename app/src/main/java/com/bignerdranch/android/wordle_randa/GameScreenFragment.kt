@@ -10,7 +10,6 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import com.bignerdranch.android.cs4750finaproject.databinding.FragmentGameScreenBinding
 import com.bignerdranch.android.wordle_randa.databinding.FragmentGameScreenBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
