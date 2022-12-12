@@ -13,7 +13,7 @@ const val EMPTY_STRING = ""
 const val NUMBER_OF_ROWS = 6
 const val ALPHA = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 const val ALPHA_LEN = 26
-val DEFAULT_KEY = Key (backgrdColor= R.color.gray, textColor=R.color.black)
+val DEFAULT_KEY = Key(backgrdColor= R.color.gray, textColor=R.color.black)
 val DEFAULT_LETTER = Letter("", R.drawable.border, R.color.black)
 
 
@@ -188,4 +188,4 @@ class WordleViewModel(): ViewModel(){
         wordle = "vowel"
     }
 }
-
+data class Key (val backgrdColor:Int, val textColor:Int)

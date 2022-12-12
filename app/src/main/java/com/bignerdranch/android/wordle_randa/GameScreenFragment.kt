@@ -10,16 +10,21 @@ import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import com.bignerdranch.android.cs4750finaproject.Signal
 import com.bignerdranch.android.wordle_randa.databinding.FragmentGameScreenBinding
 import com.bignerdranch.android.wordle_randa.shakeAnimation
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.FlowCollector
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
-class GameScreenFragment {
 
 
-    class GameScreenFragment : Fragment() {
+
+
+class GameScreenFragment : Fragment() {
         /// container
         private var _binding: FragmentGameScreenBinding? = null
         private val binding get() = _binding!!
@@ -129,157 +134,162 @@ class GameScreenFragment {
                 lifecycleScope.launch {
                     viewModel.listOfKeys[letter]!!.collect { key ->
                         button.apply {
-                            setBackgroundColor(resources.getColor(key.backgroundColor))
+                            setBackgroundColor(resources.getColor(key.backgrdColor))
                             setTextColor(resources.getColor(key.textColor))
                         }
                     }
                 }
-                button.setOnClickListener {
+
+                button.setOnClickListener{
                     viewModel.setLetter(letter)
                 }
             }
-            //seting up the grid view
-            listOfTextViews.forEachIndexed { rows, list ->
-                list.forEachIndexed { cols, textView ->
-                    lifecycleScope.launch {
-                        viewModel.listOfTextViews[rows][cols].collect { s ->
-                            if (s.letter != " " && s.backgroundColor == R.color.white) {
-                                slightlyScaleUpAnimation(textView) // function from util that, might be the flip
-                            }
-                            textView.apply {
-                                text = s.letter
-                                background = resources.getDrawable(s.backgroundColor)
-                                setTextColor(resources.getColor(s.textColor))
+
+                //seting up the grid view
+                listOfTextViews.forEachIndexed { rows, list ->
+                    list.forEachIndexed { cols, textView ->
+                        lifecycleScope.launch {
+                            viewModel.listOfTextViews[rows][cols].collect { s ->
+                                if (s.letter != " " && s.backgrdColor == R.color.white) {
+                                    slightlyScaleUpAnimation(textView) // function from util that, might be the flip
+                                }
+                                textView.apply {
+                                    text = s.letter
+                                    background = resources.getDrawable(s.backgrdColor)
+                                    setTextColor(resources.getColor(s.textColor))
+                                }
                             }
                         }
                     }
                 }
-            }
-            // when user clicks on the delete, then this happens
-            binding.deleteButton.setOnClickListener {
-                viewModel.deleteLetter()
-            }
-            // when user clicks on the delete, then this happens
-            binding.enterButton.setOnClickListener {
-                lifecycleScope.launch {
-                    viewModel.checkRow()
+                // when user clicks on the delete, then this happens
+                binding.deleteButton.setOnClickListener {
+                    viewModel.deleteLetter()
                 }
-            }
+                // when user clicks on the delete, then this happens
+                binding.enterButton.setOnClickListener {
+                    lifecycleScope.launch {
+                        viewModel.checkRow()
+                    }
+                }
 
 
-            val inflater = requireActivity().layoutInflater
+                val inflater = requireActivity().layoutInflater
 
+                /***
+                val binderDialog = StatisticDialogBinding.inflate(inflater)
+                val builder =
+                    AlertDialog.Builder(requireContext()).apply {
+                        setView(binderDialog.root)
+                    }.create()
+                binderDialog.next.setOnClickListener {
+                    builder.cancel()
+                }***/
 
-            val binderDialog = StatisticDialogBinding.inflate(inflater)
-            val builder =
-                AlertDialog.Builder(requireContext()).apply {
-                    setView(binderDialog.root)
-                }.create()
-            binderDialog.next.setOnClickListener {
-                builder.cancel()
-            }
-
-            //handling the different inputs and their possible outcomes
-            lifecycleScope.launch {
-                viewModel.signal.collect {
-                    when (it) {
-                        Signal.NOTAWORD -> {
-                            showInfo(binding.info, "Not in word list")
-                            shakeAnimation()
-                        }
-                        Signal.NEEDLETTER -> {
-                            showInfo(binding.info, "Not enough letters")
-                            shakeAnimation()
-                        }
-                        Signal.NEXTTRY -> {
-                            flip(
-                                listOfTextViews[viewModel.currentPosition.row],
-                                viewModel.checkColor(),
-                            ) {
-                                viewModel.emitColor()
-                                viewModel.currentPosition.nextRow()
-                                shakeAnimation =
-                                    shakeAnimation(lettersRow[viewModel.currentPosition.row])
+                //handling the different inputs and their possible outcomes
+                lifecycleScope.launch {
+                    viewModel.signal.collect {
+                        when (it) {
+                            Signal.NOTAWORD -> {
+                                showInfo(binding.info, "Not in word list")
+                                shakeAnimation()
                             }
-                        }
-                        Signal.GAMEOVER -> {
-                            CoroutineScope(Dispatchers.Default).launch {
-                                val currentStat = database.statisticDao().getStat()
-                                currentStat!!.lost()
-                                bindDialog(binderDialog, currentStat)
-                                database.statisticDao().update(currentStat) // delete this if no game stats
+                            Signal.NEEDLETTER -> {
+                                showInfo(binding.info, "Not enough letters")
+                                shakeAnimation()
                             }
-                            showInfo(binding.info, viewModel.wordle)
+                            Signal.NEXTTRY -> {
+                                flip(
+                                    listOfTextViews[viewModel.currPos.row],
+                                    viewModel.checkLetterColor(),
+                                ) {
+                                    viewModel.emitColor()
+                                    viewModel.currPos.nextRow()
+                                    shakeAnimation =
+                                        shakeAnimation(lettersRow[viewModel.currPos.row])
+                                }
+                            }
+                            Signal.GAMEOVER -> {
+                                /***
+                                CoroutineScope(Dispatchers.Default).launch {
+                                    val currentStat = database.statisticDao().getStat()
+                                    currentStat!!.lost()
+                                    bindDialog(binderDialog, currentStat)
+                                    database.statisticDao()
+                                        .update(currentStat) // delete this if no game stats
+                                }***/
+                                showInfo(binding.info, viewModel.wordle)
 
-                            flip(
-                                listOfTextViews[viewModel.currentPosition.row],
-                                viewModel.checkColor(),
-                            ) {
-                                builder.show()
-                                viewModel.emitColor()
-                                viewModel.resetGame()
-                                shakeAnimation =
-                                    shakeAnimation(lettersRow[viewModel.currentPosition.row])
-                            }
-                        }
-                        Signal.WIN -> {
-                            val pos = viewModel.currentPosition.row
-                            val tws = listOfTextViews[pos] // what is the current row
-                            // change this if we want to add/remove rows to change difficulty
-                            when (pos) {
-                                0 -> showInfo(binding.info, "Genius")
-                                1 -> showInfo(binding.info, "Magnificent")
-                                2 -> showInfo(binding.info, "Impressive")
-                                3 -> showInfo(binding.info, "Splendid")
-                                4 -> showInfo(binding.info, "Great")
-                                5 -> showInfo(binding.info, "Phew")
-                            }
-                            // used to store users gameplay stats
-                            CoroutineScope(Dispatchers.Default).launch {
-                                val currentStat = database.statisticDao().getStat()
-                                currentStat!!.won(pos)
-                                bindDialog(binderDialog, currentStat)
-                                database.statisticDao().update(currentStat)
-                            }
-                            flip(
-                                tws,
-                                viewModel.checkColor(),
-                            ) {
-                                winAnimator(tws){
-
+                                flip(
+                                    listOfTextViews[viewModel.currPos.row],
+                                    viewModel.checkLetterColor(),
+                                ) {
+                                    //builder.show()
                                     viewModel.emitColor()
                                     viewModel.resetGame()
-                                    builder.show()
                                     shakeAnimation =
-                                        shakeAnimation(lettersRow[viewModel.currentPosition.row])
-                                }.start()
+                                        shakeAnimation(lettersRow[viewModel.currPos.row])
+                                }
+                            }
+                            Signal.WIN -> {
+                                val pos = viewModel.currPos.row
+                                val tws = listOfTextViews[pos] // what is the current row
+                                // change this if we want to add/remove rows to change difficulty
+                                when (pos) {
+                                    0 -> showInfo(binding.info, "Genius")
+                                    1 -> showInfo(binding.info, "Magnificent")
+                                    2 -> showInfo(binding.info, "Impressive")
+                                    3 -> showInfo(binding.info, "Splendid")
+                                    4 -> showInfo(binding.info, "Great")
+                                    5 -> showInfo(binding.info, "Phew")
+                                }
+                                // used to store users gameplay stats
+                                /***
+                                CoroutineScope(Dispatchers.Default).launch {
+                                    val currentStat = database.statisticDao().getStat()
+                                    currentStat!!.won(pos)
+                                    bindDialog(binderDialog, currentStat)
+                                    database.statisticDao().update(currentStat)
+                                }***/
+                                flip(
+                                    tws,
+                                    viewModel.checkLetterColor(),
+                                ) {
+                                    winAnimator(tws) {
+
+                                        viewModel.emitColor()
+                                        viewModel.resetGame()
+                                        //builder.show()
+                                        shakeAnimation =
+                                            shakeAnimation(lettersRow[viewModel.currPos.row])
+                                    }.start()
+                                }
                             }
                         }
                     }
                 }
             }
-        }
 
-        private fun flip(
-            listOfTextViews: List<TextView>,
-            letters: List<Letter>,
-            reset: Boolean = false,
-            doOnEnd: () -> Unit
-        ) {
-            flipListOfTextViews(
-                listOfTextViews,
-                letters,
-                reset = reset
+
+            private fun flip(
+                listOfTextViews: List<TextView>,
+                letters: List<Letter>,
+                reset: Boolean = false,
+                doOnEnd: () -> Unit
             ) {
-                doOnEnd()
-            }.start()
-        }
+                flipListOfTextViews(
+                    listOfTextViews,
+                    letters,
+                    reset = reset
+                ) {
+                    doOnEnd()
+                }.start()
+            }
 
 
-        // part of the fragment
-        override fun onDestroy() {
-            _binding = null
-            super.onDestroy()
-        }
-    }
+            // part of the fragment
+            override fun onDestroy() {
+                _binding = null
+                super.onDestroy()
+            }
 }

@@ -38,7 +38,7 @@
 
     <LinearLayout
         android:id="@+id/first_letters_row"
-        style="@style/letter_rows"
+        style="@style/rows"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/wordle">
@@ -68,7 +68,7 @@
 
     <LinearLayout
         android:id="@+id/second_letters_row"
-        style="@style/letter_rows"
+        style="@style/rows"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/first_letters_row">
@@ -97,7 +97,7 @@
 
     <LinearLayout
         android:id="@+id/third_letters_row"
-        style="@style/letter_rows"
+        style="@style/rows"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/second_letters_row">
@@ -126,7 +126,7 @@
 
     <LinearLayout
         android:id="@+id/fourth_letters_row"
-        style="@style/letter_rows"
+        style="@style/rows"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/third_letters_row">
@@ -155,7 +155,7 @@
 
     <LinearLayout
         android:id="@+id/fifth_letters_row"
-        style="@style/letter_rows"
+        style="@style/rows"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fourth_letters_row">
@@ -184,7 +184,7 @@
 
     <LinearLayout
         android:id="@+id/sixth_letters_row"
-        style="@style/letter_rows"
+        style="@style/rows"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fifth_letters_row">
@@ -222,51 +222,51 @@
 
         <Button
             android:id="@+id/enter_button"
-            style="@style/button_letters"
+            style="@style/button"
             android:layout_width="80dp"
             android:text="Enter" />
 
         <Button
             android:id="@+id/Z"
-            style="@style/button_letters"
+            style="@style/button"
             android:text="Z" />
 
         <Button
             android:id="@+id/X"
-            style="@style/button_letters"
+            style="@style/button"
             android:text="X" />
 
         <Button
             android:id="@+id/C"
-            style="@style/button_letters"
+            style="@style/button"
             android:text="C" />
 
         <Button
             android:id="@+id/V"
-            style="@style/button_letters"
+            style="@style/button"
             android:text="V" />
 
         <Button
             android:id="@+id/B"
-            style="@style/button_letters"
+            style="@style/button"
             android:text="B" />
 
 
         <Button
             android:id="@+id/N"
-            style="@style/button_letters"
+            style="@style/button"
             android:text="N" />
 
 
         <Button
             android:id="@+id/M"
-            style="@style/button_letters"
+            style="@style/button"
             android:text="M" />
 
 
         <Button
             android:id="@+id/delete_button"
-            style="@style/button_letters"
+            style="@style/button"
             android:layout_width="80dp"
             android:text="Del" />
 
@@ -284,52 +284,52 @@
 
         <Button
             android:id="@+id/Q"
-            style="@style/button_letters"
+            style="@style/button"
             android:text="Q" />
 
         <Button
             android:id="@+id/W"
-            style="@style/button_letters"
+            style="@style/button"
             android:text="W" />
 
         <Button
             android:id="@+id/E"
-            style="@style/button_letters"
+            style="@style/button"
             android:text="E" />
 
         <Button
             android:id="@+id/RR"
-            style="@style/button_letters"
+            style="@style/button"
             android:text="R" />
 
         <Button
             android:id="@+id/T"
-            style="@style/button_letters"
+            style="@style/button"
             android:text="T" />
 
         <Button
             android:id="@+id/Y"
-            style="@style/button_letters"
+            style="@style/button"
             android:text="Y" />
 
         <Button
             android:id="@+id/U"
-            style="@style/button_letters"
+            style="@style/button"
             android:text="U" />
 
         <Button
             android:id="@+id/I"
-            style="@style/button_letters"
+            style="@style/button"
             android:text="I" />
 
         <Button
             android:id="@+id/O"
-            style="@style/button_letters"
+            style="@style/button"
             android:text="O" />
 
         <Button
             android:id="@+id/P"
-            style="@style/button_letters"
+            style="@style/button"
             android:text="P" />
 
 
@@ -346,47 +346,47 @@
 
         <Button
             android:id="@+id/A"
-            style="@style/button_letters"
+            style="@style/button"
             android:text="A" />
 
         <Button
             android:id="@+id/S"
-            style="@style/button_letters"
+            style="@style/button"
             android:text="S" />
 
         <Button
             android:id="@+id/D"
-            style="@style/button_letters"
+            style="@style/button"
             android:text="D" />
 
         <Button
             android:id="@+id/F"
-            style="@style/button_letters"
+            style="@style/button"
             android:text="F" />
 
         <Button
             android:id="@+id/G"
-            style="@style/button_letters"
+            style="@style/button"
             android:text="G" />
 
         <Button
             android:id="@+id/H"
-            style="@style/button_letters"
+            style="@style/button"
             android:text="H" />
 
         <Button
             android:id="@+id/J"
-            style="@style/button_letters"
+            style="@style/button"
             android:text="J" />
 
         <Button
             android:id="@+id/K"
-            style="@style/button_letters"
+            style="@style/button"
             android:text="K" />
 
         <Button
             android:id="@+id/L"
-            style="@style/button_letters"
+            style="@style/button"
             android:text="L" />
 
     </LinearLayout>

@@ -110,7 +110,7 @@ fun flipListOfTextViews(
 
         flipTextView(
             textview,
-            textview.resources.getColor(letters[index].backgroundColor),
+            textview.resources.getColor(letters[index].backgrdColor),
             reset = reset
         )
     }
