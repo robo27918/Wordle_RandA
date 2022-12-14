@@ -235,7 +235,7 @@
             android:text="E" />
 
         <Button
-            android:id="@+id/R"
+            android:id="@+id/RR"
             style="@style/button"
             android:text="R" />
 

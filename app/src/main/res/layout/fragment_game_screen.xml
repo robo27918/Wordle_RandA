@@ -224,51 +224,51 @@
             android:id="@+id/enter_button"
             style="@style/button"
             android:layout_width="80dp"
-            android:text="Enter" />
+            android:text="@string/Enter" />
 
         <Button
             android:id="@+id/Z"
             style="@style/button"
-            android:text="Z" />
+            android:text="@string/Z" />
 
         <Button
             android:id="@+id/X"
             style="@style/button"
-            android:text="X" />
+            android:text="@string/X" />
 
         <Button
             android:id="@+id/C"
             style="@style/button"
-            android:text="C" />
+            android:text="@string/C" />
 
         <Button
             android:id="@+id/V"
             style="@style/button"
-            android:text="V" />
+            android:text="@string/V" />
 
         <Button
             android:id="@+id/B"
             style="@style/button"
-            android:text="B" />
+            android:text="@string/B" />
 
 
         <Button
             android:id="@+id/N"
             style="@style/button"
-            android:text="N" />
+            android:text="@string/N" />
 
 
         <Button
             android:id="@+id/M"
             style="@style/button"
-            android:text="M" />
+            android:text="@string/M" />
 
 
         <Button
             android:id="@+id/delete_button"
             style="@style/button"
             android:layout_width="80dp"
-            android:text="Del" />
+            android:text="@string/Del" />
 
 
     </LinearLayout>
@@ -285,52 +285,52 @@
         <Button
             android:id="@+id/Q"
             style="@style/button"
-            android:text="Q" />
+            android:text="@string/Q" />
 
         <Button
             android:id="@+id/W"
             style="@style/button"
-            android:text="W" />
+            android:text="@string/W" />
 
         <Button
             android:id="@+id/E"
             style="@style/button"
-            android:text="E" />
+            android:text="@string/E" />
 
         <Button
             android:id="@+id/RR"
             style="@style/button"
-            android:text="R" />
+            android:text="@string/RR" />
 
         <Button
             android:id="@+id/T"
             style="@style/button"
-            android:text="T" />
+            android:text="@string/T" />
 
         <Button
             android:id="@+id/Y"
             style="@style/button"
-            android:text="Y" />
+            android:text="@string/Y" />
 
         <Button
             android:id="@+id/U"
             style="@style/button"
-            android:text="U" />
+            android:text="@string/U" />
 
         <Button
             android:id="@+id/I"
             style="@style/button"
-            android:text="I" />
+            android:text="@string/I" />
 
         <Button
             android:id="@+id/O"
             style="@style/button"
-            android:text="O" />
+            android:text="@string/O" />
 
         <Button
             android:id="@+id/P"
             style="@style/button"
-            android:text="P" />
+            android:text="@string/P" />
 
 
     </LinearLayout>
@@ -347,47 +347,47 @@
         <Button
             android:id="@+id/A"
             style="@style/button"
-            android:text="A" />
+            android:text="@string/A" />
 
         <Button
             android:id="@+id/S"
             style="@style/button"
-            android:text="S" />
+            android:text="@string/S" />
 
         <Button
             android:id="@+id/D"
             style="@style/button"
-            android:text="D" />
+            android:text="@string/D" />
 
         <Button
             android:id="@+id/F"
             style="@style/button"
-            android:text="F" />
+            android:text="@string/F" />
 
         <Button
             android:id="@+id/G"
             style="@style/button"
-            android:text="G" />
+            android:text="@string/G" />
 
         <Button
             android:id="@+id/H"
             style="@style/button"
-            android:text="H" />
+            android:text="@string/H" />
 
         <Button
             android:id="@+id/J"
             style="@style/button"
-            android:text="J" />
+            android:text="@string/J" />
 
         <Button
             android:id="@+id/K"
             style="@style/button"
-            android:text="K" />
+            android:text="@string/K" />
 
         <Button
             android:id="@+id/L"
             style="@style/button"
-            android:text="L" />
+            android:text="@string/L" />
 
     </LinearLayout>
 

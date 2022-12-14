@@ -6,8 +6,7 @@ import android.view.animation.AccelerateDecelerateInterpolator
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.animation.doOnEnd
-import com.bignerdranch.android.wordle_randa.Letter
-import com.bignerdranch.android.wordle_randa.R
+
 
 /// scale up for 100 (time): scales up the tile?
 /// scales back after end of duratiom

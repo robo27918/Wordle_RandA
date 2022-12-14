@@ -3,8 +3,6 @@ import kotlinx.coroutines.flow.MutableSharedFlow
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import androidx.lifecycle.viewModelScope
-import com.bignerdranch.android.cs4750finaproject.Signal
-import com.bignerdranch.android.wordle_randa.R
 import kotlinx.coroutines.launch
 import java.util.*
 
@@ -43,7 +41,7 @@ class WordleViewModel(): ViewModel(){
      * to the default val of keys (start of game scenario)
      */
     val listOfKeys = mutableMapOf<String, MutableStateFlow<Key>>().apply{
-        ALPHA.forEach{char ->
+        ALPHA.forEach{ char ->
             this[char.toString()] = MutableStateFlow<Key>(DEFAULT_KEY)
         }
     }
