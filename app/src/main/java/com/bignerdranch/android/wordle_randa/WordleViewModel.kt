@@ -5,6 +5,8 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
 import java.util.*
+import kotlin.collections.HashMap
+import kotlin.collections.HashSet
 
 private const val TAG = "WordleViewModel"
 const val EMPTY_STRING = ""
@@ -25,6 +27,7 @@ class WordleViewModel(): ViewModel(){
      *      Also provides the abiltites to emit a value
      */
     val signal = MutableSharedFlow<Signal>()
+    var words = HashSet<String>()
 
     /**
      * listOfTextViews is a 2d list used to model the grid (6 rows and 5 columns)
@@ -113,7 +116,7 @@ class WordleViewModel(): ViewModel(){
 
             // the user has won the game so the game should end
             wordle == guess ->{
-                signal.emit(Signal.GAMEOVER)
+                signal.emit(Signal.WIN)
             }
             // the user has not entered enough words
             guess.length < 5 -> {

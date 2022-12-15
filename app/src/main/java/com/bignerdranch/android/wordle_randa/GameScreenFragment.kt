@@ -181,6 +181,7 @@ class GameScreenFragment : Fragment() {
                 //handling the different inputs and their possible outcomes
                 lifecycleScope.launch {
                     viewModel.signal.collect {
+                        Log.i("GameScreenFragment", "Signal is: " + it)
                         when (it) {
                             Signal.NOTAWORD -> {
                                 showInfo(binding.info, "Not in word list")
@@ -210,7 +211,7 @@ class GameScreenFragment : Fragment() {
                                     database.statisticDao()
                                         .update(currentStat) // delete this if no game stats
                                 }***/
-                                showInfo(binding.info, viewModel.wordle)
+                                showInfo(binding.info, "Word was " + viewModel.wordle)
 
                                 flip(
                                     listOfTextViews[viewModel.currPos.row],

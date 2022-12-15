@@ -10,7 +10,7 @@ private lateinit var binding: ActivityMainBinding
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        Log.i("Mama", "Starting Main Activity")
+        Log.i("MainAct", "Starting Main Activity")
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
         //Create a frament manager

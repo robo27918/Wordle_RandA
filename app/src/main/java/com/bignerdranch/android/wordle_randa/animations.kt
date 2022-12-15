@@ -197,6 +197,6 @@ fun flipToWordle(tw: TextView, message: String, textSize:Float, doOnEnd: () -> U
 fun showInfo(tw:TextView, message: String) {
     tw.text = message
     val alpha = ObjectAnimator.ofFloat(tw, "alpha", 0f, 1f, 1f, 1f, 1f, 1f, 0f).apply {
-        duration = 2000L
+        duration = 2500L
     }.start()
 }
