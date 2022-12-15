@@ -1,9 +1,12 @@
 package com.bignerdranch.android.wordle_randa
+import android.content.Context
+import android.util.Log
 import kotlinx.coroutines.flow.MutableSharedFlow
 import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
+import java.io.File
 import java.util.*
 import kotlin.collections.HashMap
 import kotlin.collections.HashSet
@@ -27,7 +30,8 @@ class WordleViewModel(): ViewModel(){
      *      Also provides the abiltites to emit a value
      */
     val signal = MutableSharedFlow<Signal>()
-    var words = HashSet<String>()
+    lateinit var validWordsList : List<String>
+    var validWordsSet = HashSet<String>()
 
     /**
      * listOfTextViews is a 2d list used to model the grid (6 rows and 5 columns)
@@ -188,5 +192,21 @@ class WordleViewModel(): ViewModel(){
     {
         wordle = "vowel"
     }
+
+    /***
+     * Reads valid words from the file (validwords.txt) and adds them to a hashset of strings.
+     * Only call once.
+     */
+    fun readValidWords(cntxt: Context?) {
+         validWordsList = cntxt!!.assets.open("validwords.txt").bufferedReader().use{
+            it.readLines()
+        }
+        for (word in validWordsList) {
+            validWordsSet.add(word)
+        }
+        Log.i("WordleViewModel", "Can find happy in hashset " + validWordsSet.contains("happy"))
+    }
+
+
 }
 data class Key (val backgrdColor:Int, val textColor:Int)

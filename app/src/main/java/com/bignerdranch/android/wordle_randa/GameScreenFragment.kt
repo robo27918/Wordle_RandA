@@ -31,6 +31,7 @@ class GameScreenFragment : Fragment() {
 
             _binding = FragmentGameScreenBinding.inflate(inflater, container, false)
             Log.i("GameScreenFragment", "Creating View Should see")
+            viewModel.readValidWords(context)
             return binding.root
         }
 
