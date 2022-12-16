@@ -6,9 +6,7 @@ import androidx.lifecycle.ViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
-import java.io.File
 import java.util.*
-import kotlin.collections.HashMap
 import kotlin.collections.HashSet
 
 private const val TAG = "WordleViewModel"
@@ -129,10 +127,16 @@ class WordleViewModel(): ViewModel(){
             // the word is not the wordle of the day, but need to check that it is a valid entry so
             // we can either end the game or move to the next row in the view
             // make the checking function call here !!!!
-
+            !validWordsSet.contains(guess) -> {
+                signal.emit(Signal.NOTAWORD)
+            }
+            currPos.row == 5 -> {
+                signal.emit(Signal.GAMEOVER)
+            }
             //
             else ->{
-                signal.emit(Signal.NOTAWORD)
+                Log.i("WordleViewModel", "Row on is: " + currPos.row)
+                signal.emit(Signal.NEXTTRY)
             }
 
         }
@@ -190,7 +194,7 @@ class WordleViewModel(): ViewModel(){
      */
     fun getNewWord ()
     {
-        wordle = "vowel"
+        wordle = validWordsList.random()
     }
 
     /***
